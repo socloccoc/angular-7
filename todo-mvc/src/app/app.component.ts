@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from './services/todo.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,8 @@ import { TodoService } from './services/todo.service';
 })
 export class AppComponent implements OnInit {
   title = 'todo-mvc';
+
+  hasTodo$: Observable<boolean>;
 
   constructor(
     private todoService: TodoService
